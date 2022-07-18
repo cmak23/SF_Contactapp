@@ -5,7 +5,7 @@ trigger CreateCaseTrigger on Contact (after insert) {
          cas.Status   =  'Working';
          cas.Origin   =  'New Contact';
          cas.OwnerId  =  con.OwnerId;         
-         //  To link the caseid to the contact id (parent)
+         //  To link the caseid to the contact id. (parent)
          cas.ContactId =   con.Id;
          cas.Priority = PriorityLevelHandler.setPriorityLevelTrigger(con.Level__c); 
      caslist.add(cas);
